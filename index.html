@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Splitter</title>
+    <link rel="stylesheet" href="./asset/main.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Image Splitter</h1>
+        
+        <div class="level-selector">
+            Choose level:
+            <select name="level" id="level">
+                <option value="2" selected="selected">2x2</option>
+                <option value="3">3x3</option>
+                <option value="4">4x4</option>
+                <option value="5">5x5</option>
+            </select>
+        </div>
+        
+        <p>Upload a square image to split it into some randomly arranged parts.</p>
+
+        <div class="upload-section">
+            <!-- accept="image/*" allow only image type -->
+            <input type="file" id="imageInput" accept="image/*" style="display: none">
+            <button class="button" onclick="document.getElementById('imageInput').click()">
+                Choose Image
+            </button>
+            <div id="text-message"></div>
+        </div>
+
+        <div class="preview-section">
+            <div class="original-image">
+                <h3>Original Image</h3>
+                <img id="originalImage" style="display: none">
+            </div>
+
+            <div>
+                <h3>Randomly Arranged Parts</h3>
+                <div class="grid-container" id="gridContainer"></div>
+            </div>
+        </div>
+
+        <div class="controls">
+            <button class="button" id="shuffleButton" disabled>Shuffle Again</button>
+        </div>
+    </div>
+
+    <script src="./cropping.js"></script>
+    <script src="./jumping.js"></script>
+</body>
+</html>
