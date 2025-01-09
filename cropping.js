@@ -99,6 +99,9 @@ const handleImageUpload = async (e) => {
         elements.errorMessage.textContent = 'Error processing image';
         console.error(error);
     }
+    setTimeout(() => {
+        shuffleArray();
+    }, 200);
 };
 
 // Clean up object URLs when cache size exceeds limit
@@ -115,7 +118,6 @@ let debounceTimer;
 const debouncedCreateGrid = () => {
     clearTimeout(debounceTimer);
     debounceTimer = setTimeout(() => currentImageUrl && createGridItems(currentImageUrl), 150);
-    shuffleArray();
     elements.levelSelect.blur();
     elements.imageInput.blur();
 };
