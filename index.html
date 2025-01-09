@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Image Splitter</title>
+    <title>Trò xếp hình</title>
     <link rel="stylesheet" href="./asset/main.css">
 </head>
 <body>
     <div class="container">
-        <h1>Image Splitter</h1>
+        <h1>Bắt đầu trò chơi</h1>
         
         <div class="level-selector">
-            Choose level:
+            Chọn mức độ:
             <select name="level" id="level">
                 <option value="2" selected="selected">2x2</option>
                 <option value="3">3x3</option>
@@ -20,13 +20,13 @@
             </select>
         </div>
         
-        <p>Upload a square image to split it into some randomly arranged parts.</p>
+        <p>Tải hình ảnh của bạn:</p>
 
         <div class="upload-section">
             <!-- accept="image/*" allow only image type -->
             <input type="file" id="imageInput" accept="image/*" style="display: none">
             <button class="button" onclick="document.getElementById('imageInput').click()">
-                Choose Image
+                Chọn ảnh
             </button>
             <div id="text-message"></div>
         </div>
