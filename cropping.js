@@ -29,7 +29,7 @@ const resizeImage = async (imageBitmap, targetSize) => {
 };
 
 const shuffleArray = () => {
-    for (let i = 0; i < 1000; i++) {
+    for (let i = 0; i < 500; i++) {
         const randomIndex = Math.floor(Math.random() * 4);
         const event = { key: ['ArrowLeft', 'ArrowUp', 'ArrowRight', 'ArrowDown'][randomIndex] };
         document.dispatchEvent(new KeyboardEvent('keydown', event));
@@ -115,7 +115,9 @@ let debounceTimer;
 const debouncedCreateGrid = () => {
     clearTimeout(debounceTimer);
     debounceTimer = setTimeout(() => currentImageUrl && createGridItems(currentImageUrl), 150);
+    shuffleArray();
     elements.levelSelect.blur();
+    elements.imageInput.blur();
 };
 
 elements.shuffleButton.addEventListener('click', shuffleArray);
